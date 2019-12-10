@@ -16,7 +16,7 @@ class m911227_165354_utf8 extends Migration
         $tables = $db->createCommand('show tables')->queryAll();
 
         foreach ($tables as $table) {
-            $tableName = $table['Tables_in_database'];
+            $tableName = $table['Tables_in_helperbase'];
             $db->createCommand("ALTER TABLE {$tableName} CONVERT TO CHARACTER SET utf8 COLLATE utf8_unicode_ci")
                 ->execute();
         }

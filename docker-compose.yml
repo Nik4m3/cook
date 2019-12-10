@@ -13,6 +13,7 @@ services:
       - MYSQL_PASSWORD=pbpass
     volumes:
       - ./db/data:/var/lib/mysql
+      - ./docker/db/my.cnf:/etc/mysql/conf.d/my.cnf
   nginx:
     image: nginx
     restart: always
